@@ -1,0 +1,4 @@
+crewai[tools]>=0.141.0
+python-dotenv>=1.1.1
+groq>=0.4.0
+requests>=2.31.0
