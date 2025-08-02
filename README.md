@@ -16,7 +16,7 @@ An advanced multi-agent system that transforms single prompts into comprehensive
 
 | Agent | LLM Model | Temperature | Primary Function |
 |-------|-----------|-------------|------------------|
-| **Research Agent** | Qwen 3-32B | 0.3 | Academic research, data gathering |
+| **Research Agent** | Qwen/Qwen3-32B | 0.3 | Academic research, data gathering |
 | **Content Writer** | DeepSeek R1 70B | 0.6 | Technical blog post creation |
 | **Social Specialist** | DeepSeek R1 70B | 0.7 | Social media content adaptation |
 
@@ -113,7 +113,7 @@ multi_agent_content/Your_Topic_20250102_123456/
 | Feature | main.py | researcherqwen.py | researcherkilo.py |
 |---------|---------|-------------------|-------------------|
 | Agents | 1 | 1 | 3 |
-| LLM Models | DeepSeek R1 | DeepSeek R1 | Qwen 3-32B + DeepSeek R1 |
+| LLM Models | DeepSeek R1 | DeepSeek R1 | Qwen/Qwen3-32B + DeepSeek R1 |
 | Research Tools | Basic web search | Google Scholar + Web | Google Scholar + Web + Scraping |
 | Output Quality | Good | Better | Best |
 | Specialization | General | Technical | Multi-specialized |
@@ -136,7 +136,7 @@ Perfect for technical and data science content:
 ```python
 # Research Agent - Focused and efficient
 research_llm = LLM(
-    model="groq/qwen2.5-32b-instruct",
+    model="groq/qwen/qwen3-32b",
     temperature=0.3,  # Lower for factual research
     max_tokens=3000
 )
@@ -167,7 +167,7 @@ Each agent can be customized with different:
 ## 📈 Performance Benefits
 
 ### Multi-Agent Advantages
-- **Efficiency**: Qwen 3-32B handles research 40% faster
+- **Efficiency**: Qwen/Qwen3-32B handles research 40% faster
 - **Quality**: DeepSeek R1 provides superior creative writing
 - **Specialization**: Each agent optimized for specific tasks
 - **Scalability**: Easy to add more specialized agents
@@ -221,13 +221,12 @@ This project is open source. Feel free to use, modify, and distribute.
 - **Serper.dev**: Search API services
 - **Stability AI**: Image generation
 
-## 📞 Support
+## 👨‍💻 Author
 
-For questions or issues:
-1. Check the troubleshooting section
-2. Review the architecture documentation
-3. Examine sample outputs in the respective directories
-4. Create an issue with detailed information
+**Safi Cengiz**
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/safi-cengiz/)
+
+Connect with me on LinkedIn for questions, collaborations, or discussions about AI and content creation!
 
 ---
 

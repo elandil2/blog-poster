@@ -531,33 +531,66 @@ class MultiAgentContentCreator:
 # Usage
 # ======================
 if __name__ == "__main__":
-    creator = MultiAgentContentCreator()
+    print("🤖 AI-Powered Multi-Agent Content Creator")
+    print("="*50)
+    print("🔬 Research Agent: Qwen 3-32B")
+    print("✍️  Content Writer: DeepSeek R1 Distill Llama 70B")
+    print("📱 Social Media: DeepSeek R1 Distill Llama 70B")
+    print("="*50)
     
-    # Example topic
-    topic = "Advanced RAG Techniques: From Basic Retrieval to Agentic RAG Systems"
-    # Other examples:
-    # topic = "Understanding Transformer Architecture Through Implementation"
-    # topic = "MLOps Best Practices: From Model Training to Production Deployment"
-    # topic = "Vector Databases: The Foundation of Modern AI Applications"
+    # Interactive input
+    print("\n💡 What do you want to write about?")
+    print("📝 Please provide your content topic:")
+    print("\n🎯 Examples:")
+    print("   • Advanced RAG Techniques: From Basic Retrieval to Agentic RAG Systems")
+    print("   • Understanding Transformer Architecture Through Implementation")
+    print("   • MLOps Best Practices: From Model Training to Production Deployment")
+    print("   • Vector Databases: The Foundation of Modern AI Applications")
+    print("   • What is Model Context Protocol (MCP)?")
     
-    result = creator.create_content(topic)
+    # Get user input
+    topic = input("\n🚀 Enter your topic: ").strip()
     
-    print("\n" + "="*80)
-    print("🤖 MULTI-AGENT CONTENT CREATION COMPLETED!")
-    print("="*80)
-    print(f"\n📁 Content saved to: {result['output_directory']}")
-    print("\n🤖 Agent Contributions:")
-    print("🔬 **RESEARCH AGENT (Qwen 3-32B)**: Comprehensive research and data gathering")
-    print("✍️  **CONTENT WRITER (DeepSeek R1)**: Technical blog post with practical insights")
-    print("📱 **SOCIAL SPECIALIST (DeepSeek R1)**: Engaging social media content")
-    print("\n📝 What was created:")
-    print("📊 **RESEARCH**: Academic papers, industry data, technical examples")
-    print("🎯 **BLOG POST**: 1000-1500 words with code examples and real-world applications")
-    print("💼 **LINKEDIN**: Professional insights for technical audiences")
-    print("🐦 **TWITTER**: Technical threads with code snippets")
-    print("🎨 **MIDJOURNEY**: Professional AI-generated visual prompts")
-    print("🌍 **BILINGUAL**: English and Turkish social media content")
-    print("="*80)
-    print(f"\n💡 Check '02_technical_blog_post.md' for the main article!")
-    print(f"🔍 Check '01_research_findings.md' for detailed research!")
-    print(f"📱 Check '03_social_media_content.md' for social content!")
+    # Validate input
+    if not topic:
+        print("❌ No topic provided. Exiting...")
+        exit(1)
+    
+    if len(topic) < 5:
+        print("❌ Topic too short. Please provide a more detailed topic.")
+        exit(1)
+    
+    print(f"\n✅ Great! Creating content about: '{topic}'")
+    print("⏱️  This will take a few minutes...")
+    
+    try:
+        creator = MultiAgentContentCreator()
+        result = creator.create_content(topic)
+        
+        print("\n" + "="*80)
+        print("🎉 MULTI-AGENT CONTENT CREATION COMPLETED!")
+        print("="*80)
+        print(f"\n📁 Content saved to: {result['output_directory']}")
+        print("\n🤖 Agent Contributions:")
+        print("🔬 **RESEARCH AGENT (Qwen 3-32B)**: Comprehensive research and data gathering")
+        print("✍️  **CONTENT WRITER (DeepSeek R1)**: Technical blog post with practical insights")
+        print("📱 **SOCIAL SPECIALIST (DeepSeek R1)**: Engaging social media content")
+        print("\n📝 What was created:")
+        print("📊 **RESEARCH**: Academic papers, industry data, technical examples")
+        print("🎯 **BLOG POST**: 1000-1500 words with code examples and real-world applications")
+        print("💼 **LINKEDIN**: Professional insights for technical audiences")
+        print("🐦 **TWITTER**: Technical threads with code snippets")
+        print("🎨 **MIDJOURNEY**: Professional AI-generated visual prompts")
+        print("🌍 **BILINGUAL**: English and Turkish social media content")
+        print("="*80)
+        print(f"\n💡 Check '02_technical_blog_post.md' for the main article!")
+        print(f"🔍 Check '01_research_findings.md' for detailed research!")
+        print(f"📱 Check '03_social_media_content.md' for social content!")
+        
+    except KeyboardInterrupt:
+        print("\n\n⚠️  Process interrupted by user. Exiting...")
+        exit(0)
+    except Exception as e:
+        print(f"\n❌ Error occurred: {str(e)}")
+        print("💡 Please check your API keys in .env file and try again.")
+        exit(1)
