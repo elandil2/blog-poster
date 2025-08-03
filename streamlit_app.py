@@ -462,114 +462,12 @@ def main():
         initial_sidebar_state="expanded"
     )
     
-    # Add custom CSS for dark navy theme
-    st.markdown("""
-    <style>
-    /* Main app background */
-    .stApp {
-        background-color: #2E3440;
-    }
+    # Using Streamlit's default theme - no custom CSS styling
     
-    /* Main content area */
-    .main .block-container {
-        background-color: #2E3440;
-        color: #ECEFF4;
-    }
-    
-    /* Sidebar styling */
-    .css-1d391kg {
-        background-color: #3B4252;
-    }
-    
-    /* Style the main title */
-    .main-title {
-        background-color: #434C5E;
-        color: #ECEFF4;
-        padding: 30px;
-        border-radius: 10px;
-        margin-bottom: 30px;
-        text-align: center;
-        border: 1px solid #4C566A;
-    }
-    
-    .main-title h1 {
-        margin: 0;
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: #88C0D0;
-    }
-    
-    .main-title p {
-        margin: 10px 0 0 0;
-        font-size: 1.2rem;
-        color: #D8DEE9;
-    }
-    
-    /* Content sections */
-    .content-section {
-        background-color: #434C5E;
-        color: #ECEFF4;
-        padding: 25px;
-        border-radius: 10px;
-        margin-bottom: 20px;
-        border: 1px solid #4C566A;
-    }
-    
-    /* Headers */
-    .stApp h1, .stApp h2, .stApp h3 {
-        color: #88C0D0;
-    }
-    
-    /* Text */
-    .stApp p, .stApp div {
-        color: #ECEFF4;
-    }
-    
-    /* Buttons */
-    .stButton > button {
-        background-color: #5E81AC;
-        color: #ECEFF4;
-        border: none;
-        border-radius: 8px;
-        padding: 12px 24px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-    }
-    
-    .stButton > button:hover {
-        background-color: #81A1C1;
-        transform: translateY(-2px);
-    }
-    
-    /* Input fields */
-    .stTextInput > div > div > input {
-        background-color: #3B4252;
-        color: #ECEFF4;
-        border: 1px solid #4C566A;
-    }
-    
-    .stTextArea > div > div > textarea {
-        background-color: #3B4252;
-        color: #ECEFF4;
-        border: 1px solid #4C566A;
-    }
-    
-    /* Selectbox */
-    .stSelectbox > div > div > select {
-        background-color: #3B4252;
-        color: #ECEFF4;
-        border: 1px solid #4C566A;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-    
-    # Header with styled container
-    st.markdown("""
-    <div class="main-title">
-        <h1>🤖 AI-Powered Multi-Agent Content Creator</h1>
-        <p>Transform single prompts into comprehensive, research-backed content packages</p>
-    </div>
-    """, unsafe_allow_html=True)
+    # Header using standard Streamlit components
+    st.title("🤖 AI-Powered Multi-Agent Content Creator")
+    st.markdown("**Transform single prompts into comprehensive, research-backed content packages**")
+    st.markdown("---")
     
     # Sidebar for API Keys
     st.sidebar.header("🔑 API Configuration")
