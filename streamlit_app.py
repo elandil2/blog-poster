@@ -450,7 +450,14 @@ def main():
         initial_sidebar_state="expanded"
     )
     
-    # Header
+    # Header with image
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        try:
+            st.image("forstreamlit.png", width=400)
+        except:
+            pass  # If image not found, continue without it
+    
     st.title("🤖 AI-Powered Multi-Agent Content Creator")
     st.markdown("Transform single prompts into comprehensive, research-backed content packages")
     

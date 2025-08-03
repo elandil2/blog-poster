@@ -162,7 +162,15 @@ streamlit run streamlit_app.py
 # Open browser at http://localhost:8501
 ```
 
-**📖 Detailed Web App Guide**: See [`STREAMLIT_README.md`](STREAMLIT_README.md)
+### Deploy to Streamlit Cloud (Free)
+```bash
+# Your app is ready for Streamlit Cloud deployment!
+# Just connect your GitHub repo at share.streamlit.io
+```
+
+**📖 Detailed Guides**:
+- [`STREAMLIT_README.md`](STREAMLIT_README.md) - Local development
+- [`STREAMLIT_CLOUD_DEPLOYMENT.md`](STREAMLIT_CLOUD_DEPLOYMENT.md) - Cloud deployment
 
 ##  Configuration
 
@@ -268,5 +276,6 @@ Connect with me on LinkedIn for questions, collaborations, or discussions about 
 ---
 
 **🚀 Ready to create amazing content?**
-- **For Users**: `streamlit run streamlit_app.py` (Web interface)
-- **For Developers**: `python researcherkilo.py` (CLI interface)
+- **🌐 Web App (Local)**: `streamlit run streamlit_app.py`
+- **☁️ Web App (Cloud)**: Deploy to [Streamlit Cloud](https://share.streamlit.io) for free!
+- **🤖 CLI Interface**: `python researcherkilo.py` (For developers)
