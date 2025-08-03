@@ -462,50 +462,73 @@ def main():
         initial_sidebar_state="expanded"
     )
     
-    # Add custom CSS for better styling
+    # Add custom CSS for dark navy theme
     st.markdown("""
     <style>
+    /* Main app background */
+    .stApp {
+        background-color: #2E3440;
+    }
+    
+    /* Main content area */
+    .main .block-container {
+        background-color: #2E3440;
+        color: #ECEFF4;
+    }
+    
+    /* Sidebar styling */
+    .css-1d391kg {
+        background-color: #3B4252;
+    }
+    
     /* Style the main title */
     .main-title {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
+        background-color: #434C5E;
+        color: #ECEFF4;
         padding: 30px;
-        border-radius: 15px;
+        border-radius: 10px;
         margin-bottom: 30px;
         text-align: center;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        border: 1px solid #4C566A;
     }
     
     .main-title h1 {
         margin: 0;
         font-size: 2.5rem;
         font-weight: 700;
+        color: #88C0D0;
     }
     
     .main-title p {
         margin: 10px 0 0 0;
         font-size: 1.2rem;
-        opacity: 0.9;
+        color: #D8DEE9;
     }
     
-    /* Enhance sidebar */
-    .css-1d391kg {
-        background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
-    }
-    
-    /* Style content sections */
+    /* Content sections */
     .content-section {
-        background: white;
+        background-color: #434C5E;
+        color: #ECEFF4;
         padding: 25px;
         border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
         margin-bottom: 20px;
+        border: 1px solid #4C566A;
     }
     
-    /* Style buttons */
+    /* Headers */
+    .stApp h1, .stApp h2, .stApp h3 {
+        color: #88C0D0;
+    }
+    
+    /* Text */
+    .stApp p, .stApp div {
+        color: #ECEFF4;
+    }
+    
+    /* Buttons */
     .stButton > button {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
+        background-color: #5E81AC;
+        color: #ECEFF4;
         border: none;
         border-radius: 8px;
         padding: 12px 24px;
@@ -514,19 +537,31 @@ def main():
     }
     
     .stButton > button:hover {
+        background-color: #81A1C1;
         transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    }
+    
+    /* Input fields */
+    .stTextInput > div > div > input {
+        background-color: #3B4252;
+        color: #ECEFF4;
+        border: 1px solid #4C566A;
+    }
+    
+    .stTextArea > div > div > textarea {
+        background-color: #3B4252;
+        color: #ECEFF4;
+        border: 1px solid #4C566A;
+    }
+    
+    /* Selectbox */
+    .stSelectbox > div > div > select {
+        background-color: #3B4252;
+        color: #ECEFF4;
+        border: 1px solid #4C566A;
     }
     </style>
     """, unsafe_allow_html=True)
-    
-    # Display the background image at the top
-    try:
-        col1, col2, col3 = st.columns([1, 3, 1])
-        with col2:
-            st.image("forstreamlit.png", use_column_width=True, caption="AI-Powered Content Creation")
-    except:
-        pass  # If image not found, continue without it
     
     # Header with styled container
     st.markdown("""
