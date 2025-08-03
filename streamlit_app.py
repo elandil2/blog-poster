@@ -36,14 +36,14 @@ class GoogleScholarTool(BaseTool):
     description: str = "Search Google Scholar for academic papers and research publications using Serper.dev API."
     args_schema: Type[BaseModel] = GoogleScholarSearchInput
     
-    def __init__(self, serper_api_key):
+    def __init__(self, serper_api_key=None):
         super().__init__()
-        self.serper_api_key = serper_api_key
+        self._serper_api_key = serper_api_key
     
     def _run(self, query: str, years_back: int = 3) -> str:
         """Search Google Scholar using Serper.dev API"""
         try:
-            if not self.serper_api_key:
+            if not self._serper_api_key:
                 return "❌ SERPER_API_KEY not provided"
             
             # Calculate year range
@@ -55,7 +55,7 @@ class GoogleScholarTool(BaseTool):
             
             # Headers for Serper.dev
             headers = {
-                'X-API-KEY': self.serper_api_key,
+                'X-API-KEY': self._serper_api_key,
                 'Content-Type': 'application/json'
             }
             
