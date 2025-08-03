@@ -50,10 +50,17 @@ STABILITY_API_KEY=your_stability_api_key
 
 ### Usage
 
-#### Latest Multi-Agent Version (Recommended)
+#### 🌐 Web App Version (Recommended for Users)
+```bash
+streamlit run streamlit_app.py
+```
+*User-friendly web interface with secure API key input*
+
+#### 🤖 CLI Multi-Agent Version (Recommended for Developers)
 ```python
 python researcherkilo.py
 ```
+*Interactive command-line interface*
 
 #### Single-Agent Technical Version
 ```python
@@ -69,11 +76,13 @@ python main.py
 
 ```
 blog-poster/
-├── researcherkilo.py          # 🔥 Multi-agent system (LATEST)
+├── streamlit_app.py           # 🌐 Web app interface (USER-FRIENDLY)
+├── researcherkilo.py          # 🤖 Multi-agent CLI system
 ├── researcherqwen.py          # Technical content creator
 ├── main.py                    # Basic content creator
-├── requirements.txt           # Dependencies
-├── .env                       # API keys (create this)
+├── requirements.txt           # Dependencies (includes Streamlit)
+├── .env                       # API keys (create this for CLI)
+├── STREAMLIT_README.md        # Web app documentation
 ├── multi_agent_architecture.md # Architecture documentation
 ├── outputs/                   # Single-agent outputs
 ├── technical_content/         # Technical content outputs
@@ -110,14 +119,17 @@ multi_agent_content/Your_Topic_20250102_123456/
 
 ## 📊 Version Comparison
 
-| Feature | main.py | researcherqwen.py | researcherkilo.py |
-|---------|---------|-------------------|-------------------|
-| Agents | 1 | 1 | 3 |
-| LLM Models | DeepSeek R1 | DeepSeek R1 | Qwen/Qwen3-32B + DeepSeek R1 |
-| Research Tools | Basic web search | Google Scholar + Web | Google Scholar + Web + Scraping |
-| Output Quality | Good | Better | Best |
-| Specialization | General | Technical | Multi-specialized |
-| Processing | Single-task | Single-task | Sequential multi-task |
+| Feature | main.py | researcherqwen.py | researcherkilo.py | streamlit_app.py |
+|---------|---------|-------------------|-------------------|------------------|
+| Interface | CLI | CLI | CLI | Web App |
+| Agents | 1 | 1 | 3 | 3 |
+| LLM Models | DeepSeek R1 | DeepSeek R1 | Qwen/Qwen3-32B + DeepSeek R1 | Qwen/Qwen3-32B + DeepSeek R1 |
+| Research Tools | Basic web search | Google Scholar + Web | Google Scholar + Web + Scraping | Google Scholar + Web + Scraping |
+| API Key Input | .env file | .env file | .env file | Web interface |
+| User Experience | Developer | Developer | Developer | End User |
+| Output Quality | Good | Better | Best | Best |
+| Specialization | General | Technical | Multi-specialized | Multi-specialized |
+| Processing | Single-task | Single-task | Sequential multi-task | Sequential multi-task |
 
 ## 🎨 Sample Topics
 
@@ -129,7 +141,30 @@ Perfect for technical and data science content:
 - "Vector Databases: The Foundation of Modern AI Applications"
 - "What is Model Context Protocol (MCP)?"
 
-## 🔧 Configuration
+## 🌐 Web App Features
+
+### For End Users (Streamlit App)
+- **🔒 Secure API Input**: Enter your own API keys safely
+- **🎯 User-Friendly Interface**: No technical setup required
+- **📊 Real-Time Progress**: Visual progress tracking
+- **📥 Easy Downloads**: ZIP packages and individual files
+- **🌍 Browser-Based**: Works on any device
+- **📱 Responsive Design**: Mobile and desktop friendly
+
+### Getting Started with Web App
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the web app
+streamlit run streamlit_app.py
+
+# Open browser at http://localhost:8501
+```
+
+**📖 Detailed Web App Guide**: See [`STREAMLIT_README.md`](STREAMLIT_README.md)
+
+##  Configuration
 
 ### LLM Settings
 
@@ -224,10 +259,14 @@ This project is open source. Feel free to use, modify, and distribute.
 ## 👨‍💻 Author
 
 **Safi Cengiz**
+
+
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/safi-cengiz/)
 
 Connect with me on LinkedIn for questions, collaborations, or discussions about AI and content creation!
 
 ---
 
-**🚀 Ready to create amazing content? Start with `python researcherkilo.py`!**
+**🚀 Ready to create amazing content?**
+- **For Users**: `streamlit run streamlit_app.py` (Web interface)
+- **For Developers**: `python researcherkilo.py` (CLI interface)
