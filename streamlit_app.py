@@ -462,47 +462,77 @@ def main():
         initial_sidebar_state="expanded"
     )
     
-    # Add custom CSS for background image
+    # Add custom CSS for better styling
     st.markdown("""
     <style>
-    .main > div {
-        background-image: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url("https://raw.githubusercontent.com/elandil2/blog-poster/main/forstreamlit.png");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }
-    
-    .stApp > header {
-        background: transparent;
-    }
-    
-    .stApp {
-        background: transparent;
-    }
-    
-    /* Make sidebar slightly transparent */
-    .css-1d391kg {
-        background-color: rgba(240, 242, 246, 0.95);
-    }
-    
     /* Style the main title */
     .main-title {
-        background: rgba(255, 255, 255, 0.9);
-        padding: 20px;
-        border-radius: 10px;
-        margin-bottom: 20px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 30px;
+        border-radius: 15px;
+        margin-bottom: 30px;
         text-align: center;
-        backdrop-filter: blur(5px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    .main-title h1 {
+        margin: 0;
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+    
+    .main-title p {
+        margin: 10px 0 0 0;
+        font-size: 1.2rem;
+        opacity: 0.9;
+    }
+    
+    /* Enhance sidebar */
+    .css-1d391kg {
+        background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+    
+    /* Style content sections */
+    .content-section {
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        margin-bottom: 20px;
+    }
+    
+    /* Style buttons */
+    .stButton > button {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 12px 24px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+    
+    .stButton > button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
     }
     </style>
     """, unsafe_allow_html=True)
+    
+    # Display the background image at the top
+    try:
+        col1, col2, col3 = st.columns([1, 3, 1])
+        with col2:
+            st.image("forstreamlit.png", use_column_width=True, caption="AI-Powered Content Creation")
+    except:
+        pass  # If image not found, continue without it
     
     # Header with styled container
     st.markdown("""
     <div class="main-title">
         <h1>🤖 AI-Powered Multi-Agent Content Creator</h1>
-        <p style="font-size: 18px; color: #666;">Transform single prompts into comprehensive, research-backed content packages</p>
+        <p>Transform single prompts into comprehensive, research-backed content packages</p>
     </div>
     """, unsafe_allow_html=True)
     
