@@ -83,7 +83,10 @@ python-dotenv>=1.1.1
 groq>=0.4.0
 requests>=2.31.0
 streamlit>=1.28.0
+pysqlite3-binary>=0.5.0
 ```
+
+**Note**: `pysqlite3-binary` is included to fix SQLite3 compatibility issues on Streamlit Cloud.
 
 ## 🌐 **After Deployment**
 
@@ -163,6 +166,11 @@ Once deployed, you can share your app URL with:
    - Usually due to missing API keys
    - Check error logs in Streamlit Cloud dashboard
    - Verify dependencies are correctly installed
+
+3. **SQLite3 Version Error**
+   - Fixed automatically with `pysqlite3-binary` package
+   - App includes automatic SQLite3 compatibility handling
+   - No user action required
 
 3. **Slow Performance**
    - Normal for AI processing (4-6 minutes)

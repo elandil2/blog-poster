@@ -3,6 +3,18 @@ import os
 import tempfile
 import zipfile
 from datetime import datetime
+
+# Fix for Streamlit Cloud SQLite3 issue
+try:
+    import sqlite3
+    # Check if we need to use pysqlite3-binary
+    if sqlite3.sqlite_version_info < (3, 35, 0):
+        import pysqlite3
+        import sys
+        sys.modules['sqlite3'] = pysqlite3
+except ImportError:
+    pass
+
 from crewai import Agent, Crew, Process, Task, LLM
 from crewai.tools import BaseTool
 from crewai_tools import SerperDevTool, ScrapeWebsiteTool
