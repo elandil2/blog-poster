@@ -462,16 +462,49 @@ def main():
         initial_sidebar_state="expanded"
     )
     
-    # Header with image
-    col1, col2, col3 = st.columns([1, 2, 1])
-    with col2:
-        try:
-            st.image("forstreamlit.png", width=400)
-        except:
-            pass  # If image not found, continue without it
+    # Add custom CSS for background image
+    st.markdown("""
+    <style>
+    .main > div {
+        background-image: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url("https://raw.githubusercontent.com/elandil2/blog-poster/main/forstreamlit.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
     
-    st.title("🤖 AI-Powered Multi-Agent Content Creator")
-    st.markdown("Transform single prompts into comprehensive, research-backed content packages")
+    .stApp > header {
+        background: transparent;
+    }
+    
+    .stApp {
+        background: transparent;
+    }
+    
+    /* Make sidebar slightly transparent */
+    .css-1d391kg {
+        background-color: rgba(240, 242, 246, 0.95);
+    }
+    
+    /* Style the main title */
+    .main-title {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        text-align: center;
+        backdrop-filter: blur(5px);
+    }
+    </style>
+    """, unsafe_allow_html=True)
+    
+    # Header with styled container
+    st.markdown("""
+    <div class="main-title">
+        <h1>🤖 AI-Powered Multi-Agent Content Creator</h1>
+        <p style="font-size: 18px; color: #666;">Transform single prompts into comprehensive, research-backed content packages</p>
+    </div>
+    """, unsafe_allow_html=True)
     
     # Sidebar for API Keys
     st.sidebar.header("🔑 API Configuration")
